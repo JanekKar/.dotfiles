@@ -1,0 +1,18 @@
+alias ll="exa --long --header"
+alias l="exa -a --long --header"
+alias llg="exa --long --header"
+
+alias vim="nvim"
+
+alias vimconfig="cd $HOME/.config/nvim && nvim . && cd -"
+alias zshconfig="nvim ~/.zshrc"
+alias config='/usr/bin/git --git-dir=/home/janek/.cfg/ --work-tree=/home/janek'
+
+alias mv='mv -i'
+alias rm='rm -i'
+
+alias open="xdg-open"
+
+# Custom scripts
+alias calctime=$HOME/dev/scripts/calctime.sh
+
