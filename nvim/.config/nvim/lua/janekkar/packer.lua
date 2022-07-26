@@ -22,12 +22,12 @@ return require('packer').startup(function(use)
   use 'airblade/vim-gitgutter'
 
   use {
-    'nvim-treesitter/nvim-treesitter', 
+    'nvim-treesitter/nvim-treesitter',
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
 
   -- Auto closing brackets etc.
-  use 'jiangmiao/auto-pairs'
+  -- use 'jiangmiao/auto-pairs'
 
   use 'ambv/black'
 
@@ -51,4 +51,6 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround'
 
   use 'TimUntersberger/neogit'
+
+  use("mbbill/undotree")
 end)

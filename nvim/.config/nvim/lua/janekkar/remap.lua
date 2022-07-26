@@ -21,3 +21,5 @@ inoremap("<PageUp>", "<nop>")
 vnoremap("<PageUp>", "<nop>")
 nnoremap("<PageDown>", "<nop>")
 inoremap("<PageDown>", "<nop>")
+
+nnoremap("<leader>u", ":UndotreeShow<CR>")
