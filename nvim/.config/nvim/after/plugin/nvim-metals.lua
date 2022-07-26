@@ -1,4 +1,4 @@
-local Remap = require("custom.keymap")
+local Remap = require("janekkar.keymap")
 local nnoremap = Remap.nnoremap
 
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+

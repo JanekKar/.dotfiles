@@ -1,5 +1,4 @@
-local Remap = require("custom.keymap")
-local nnoremap = Remap.nnoremap
+local nnoremap = require("janekkar.keymap").nnoremap
 
 
 -- Telescope remaps
@@ -9,12 +8,3 @@ nnoremap("<leader>fg", ":lua require('telescope.builtin').live_grep()<CR>")
 nnoremap("<leader>fb", ":lua require('telescope.builtin').buffers()<CR>")
 nnoremap("<leader>fh", ":lua require('telescope.builtin').help_tags()<CR>")
 nnoremap("<leader>ps", ":lua require('telescope.builtin').grep_string({ search = vim.fn.input(\"Grep Form > \")})<CR>")
-
-require('telescope').setup{
-defaults ={
-  file_ignore_patterns = {
-        "target",
-        "__init__.py",
-    }
-  }
-}

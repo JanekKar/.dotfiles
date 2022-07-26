@@ -1,6 +1,5 @@
 local neogit = require('neogit')
-local Remap = require("custom.keymap")
-local nnoremap = Remap.nnoremap
+local nnoremap = require("janekkar.keymap").nnoremap
 
 neogit.setup{}
 

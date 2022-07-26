@@ -23,7 +23,7 @@ vim.opt.scrolloff=8
 vim.opt.colorcolumn="80"
 vim.opt.signcolumn="yes"
 
-vim.opt.cmdheight=1
+vim.opt.cmdheight=2
 
 vim.opt.fileencoding="utf-8"
 
@@ -31,3 +31,5 @@ vim.opt.mouse=a
 
 -- Open splits to right
 vim.opt.splitright=true
+
+vim.g.mapleader = " "
