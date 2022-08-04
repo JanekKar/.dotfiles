@@ -2,6 +2,8 @@ require("janekkar.set")
 require("janekkar.packer")
 require("janekkar.neogit")
 require("janekkar.remap")
+require("janekkar.telescope")
+require("janekkar.lualine")
 
 local augroup = vim.api.nvim_create_augroup
 janekkarGroup = augroup('JanekKar', {})
@@ -32,4 +34,4 @@ autocmd('TextYankPost', {
 
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
+vim.g.netrw_winsize = 20

@@ -2,7 +2,7 @@ local nnoremap = require("janekkar.keymap").nnoremap
 local inoremap = require("janekkar.keymap").inoremap
 local vnoremap = require("janekkar.keymap").vnoremap
 
-nnoremap("<leader>ee", "<cmd>Ex<Cr>")
+nnoremap("<leader>ee", "<cmd>Vexplore<Cr>")
 
 nnoremap("<Up>", "<nop>")
 nnoremap("<Down>", "<nop>")
