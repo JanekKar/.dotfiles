@@ -60,12 +60,12 @@ metals_config.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 -- Autocmd that will actually be in charging of starting the whole thing
 local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
 
--- vim.api.nvim_create_autocmd("BufWritePre", {
-  -- callback = function()
-    -- vim.lsp.buf.formatting()
-  -- end,
-  -- group = nvim_metals_group,
--- })
+vim.api.nvim_create_autocmd("BufWritePre", {
+  callback = function()
+    vim.lsp.buf.formatting()
+  end,
+  group = nvim_metals_group,
+})
 
 vim.api.nvim_create_autocmd("FileType", {
   -- NOTE: You may or may not want java included here. You will need it if you

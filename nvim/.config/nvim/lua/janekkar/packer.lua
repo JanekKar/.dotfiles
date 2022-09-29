@@ -52,5 +52,5 @@ return require('packer').startup(function(use)
 
   use 'TimUntersberger/neogit'
 
-  use("mbbill/undotree")
+  use 'mbbill/undotree'
 end)

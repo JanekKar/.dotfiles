@@ -8,25 +8,26 @@ cmp.setup({
     -- also using the snippet stuff. So keep in mind that if you remove
     -- snippets you need to remove this select
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    ["<Tab>"] = cmp.mapping.confirm({ select = true }),
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
     -- I use tabs... some say you should stick to ins-completion but this is just here as an example
-    ["<Tab>"] = function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      else
-        fallback()
-      end
-    end,
-    ["<S-Tab>"] = function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      else
-        fallback()
-      end
-    end,
+    -- ["<Tab>"] = function(fallback)
+      -- if cmp.visible() then
+        -- cmp.select_next_item()
+      -- else
+        -- fallback()
+      -- end
+    -- end,
+    -- ["<S-Tab>"] = function(fallback)
+      -- if cmp.visible() then
+        -- cmp.select_prev_item()
+      -- else
+        -- fallback()
+      -- end
+    -- end,
   }),
   sources = {
     { name = "nvim_lsp" },
