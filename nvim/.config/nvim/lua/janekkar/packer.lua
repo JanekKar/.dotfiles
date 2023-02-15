@@ -37,16 +37,17 @@ return require('packer').startup(function(use)
   -- use 'nvim-lua/completion-nvim'
 
   -- cmp settings
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
+
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-nvim-lua'
   use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
-  use 'saadparwaiz1/cmp_luasnip'
   use 'onsails/lspkind.nvim'
 
+  -- Comments
   use 'preservim/nerdcommenter'
   use 'tpope/vim-surround'
 

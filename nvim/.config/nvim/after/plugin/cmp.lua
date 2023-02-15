@@ -13,39 +13,21 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
-    -- I use tabs... some say you should stick to ins-completion but this is just here as an example
-    -- ["<Tab>"] = function(fallback)
-      -- if cmp.visible() then
-        -- cmp.select_next_item()
-      -- else
-        -- fallback()
-      -- end
-    -- end,
-    -- ["<S-Tab>"] = function(fallback)
-      -- if cmp.visible() then
-        -- cmp.select_prev_item()
-      -- else
-        -- fallback()
-      -- end
-    -- end,
   }),
   sources = {
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "path" },
-    -- { name = "vsnip" },
-    {name = "luasnip"},
+    { name = "vsnip" },
     { name = "buffer", keyword_length  = 3}
   },
   snippet = {
     expand = function(args)
-      -- Comes from vsnip
-      -- vim.fn["vsnip#anonymous"](args.body)
-      require("luasnip").lsp_expand(args.body)
+      vim.fn["vsnip#anonymous"](args.body)
+      -- require("vsnip").lsp_expand(args.body)
     end,
   },
   formatting = {
-    -- Youtube: How to set up nice formatting for your sources.
     format = lspkind.cmp_format {
       with_text = true,
       menu = {
@@ -53,9 +35,8 @@ cmp.setup({
         nvim_lsp = "[LSP]",
         nvim_lua = "[api]",
         path = "[path]",
-        luasnip = "[snip]",
+        vsnip = "[snip]",
         gh_issues = "[issues]",
-        tn = "[TabNine]",
       },
     },
   },
@@ -66,7 +47,4 @@ cmp.setup({
   }
 })
 
-local metals_config = require("metals").bare_config()
--- Setting cmp
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-metals_config.capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+

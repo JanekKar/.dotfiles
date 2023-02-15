@@ -1,5 +1,9 @@
 local Remap = require("janekkar.keymap")
 local nnoremap = Remap.nnoremap
+local map = vim.keymap.set
+
+
+vim.opt_global.completeopt = { "menuone", "noinsert", "noselect" }
 
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
 -- These are example settings to use with nvim-metals and the nvim built in
@@ -29,12 +33,14 @@ nnoremap("<space>d", ":lua vim.lsp.diagnostic.set_loclist()<CR>")
 nnoremap("[c", ":lua vim.lsp.diagnostic.goto_prev { wrap = false }<CR>")
 nnoremap("]c", ":lua vim.lsp.diagnostic.goto_next { wrap = false }<CR>")
 
--------------------------------------------------------------------------------
--- nvim-lsp Settings
--------------------------------------------------------------------------------
+map("n", "<leader>aa", vim.diagnostic.setqflist)
+map("n", "<leader>ae", function()
+  vim.diagnostic.setqflist({ severity = "E" })
+end)
+map("n", "<leader>d", vim.diagnostic.setloclist)
 
 -------------------------------------------------------------------------------
--- nvim-metals setup with a few additions such as nvim-completions
+-- nvim-lsp Settings
 -------------------------------------------------------------------------------
 metals_config = require'metals'.bare_config()
 metals_config.settings = {
@@ -45,9 +51,12 @@ metals_config.settings = {
    }
 }
 
-metals_config.on_attach = function()
-  require'cmp'.on_attach();
-end
+-- Setting cmp
+metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+-- metals_config.on_attach = function()
+  -- require'cmp'.on_attach();
+-- end
 
 metals_config.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
