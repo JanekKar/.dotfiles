@@ -14,5 +14,5 @@ alias rm='rm -i'
 alias open="xdg-open"
 
 # Custom scripts
-alias calctime=$HOME/dev/scripts/calctime.sh
+alias calctime="java -jar $HOME/.dotfiles/calctime-assembly-1.0.jar"
 
