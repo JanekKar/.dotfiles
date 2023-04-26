@@ -10,6 +10,8 @@ vim.opt.relativenumber = true
 
 vim.opt.hlsearch=false
 vim.opt.incsearch=true
+vim.opt.ignorecase=true
+vim.opt.smartcase=true
 vim.opt.hidden=true
 vim.opt.wrap=false
 
@@ -27,7 +29,7 @@ vim.opt.cmdheight=1
 
 vim.opt.fileencoding="utf-8"
 
-vim.opt.mouse=a
+vim.opt.mouse="a"
 
 -- Open splits to right
 vim.opt.splitright=true
