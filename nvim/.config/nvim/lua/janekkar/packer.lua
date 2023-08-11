@@ -50,6 +50,17 @@ return require('packer').startup(function(use)
   -- Comments
   use 'preservim/nerdcommenter'
   use 'tpope/vim-surround'
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {
+        keywords = {
+          TODO = { icon = " ", color = "info", alt = {"todo"}}
+        }
+      }
+    end
+  }
 
   use 'TimUntersberger/neogit'
 
