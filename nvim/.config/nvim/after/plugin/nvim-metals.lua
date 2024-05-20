@@ -25,7 +25,7 @@ nnoremap("gr", ":lua vim.lsp.buf.references()<CR>")
 nnoremap("gds", ":lua vim.lsp.buf.document_symbol()<CR>")
 nnoremap("gws", ":lua vim.lsp.buf.workspace_symbol()<CR>")
 nnoremap("<leader>rn", ":lua vim.lsp.buf.rename()<CR>")
-nnoremap("<leader>f", ":lua vim.lsp.buf.formatting()<CR>")
+nnoremap("<leader>f", ":lua vim.lsp.buf.format()<CR>")
 nnoremap("<leader>ca", ":lua vim.lsp.buf.code_action()<CR>")
 nnoremap("<leader>ws", ":lua require'metals'.worksheet_hover()<CR>")
 nnoremap("<leader>a", ":lua require'metals'.open_all_diagnostics()<CR>")
@@ -69,12 +69,12 @@ metals_config.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 -- Autocmd that will actually be in charging of starting the whole thing
 local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
 
--- vim.api.nvim_create_autocmd("BufWritePre", {
-  -- callback = function()
-    -- vim.lsp.buf.formatting()
-  -- end,
-  -- group = nvim_metals_group,
--- })
+vim.api.nvim_create_autocmd("BufWritePre", {
+  callback = function()
+    vim.lsp.buf.format()
+  end,
+  group = nvim_metals_group,
+})
 
 vim.api.nvim_create_autocmd("FileType", {
   -- NOTE: You may or may not want java included here. You will need it if you
