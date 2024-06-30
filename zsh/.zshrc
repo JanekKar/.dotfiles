@@ -3,12 +3,6 @@
 # Path to oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Path to python project
-export PYTHONPATH="${PYTHONPATH}:/home/janek/dev/django-dev-sup-test/server/tests/."
-
-# JAVA
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-
 # Path to vim rc file
 export MYVIMRC=$HOME/.config/nvim/init.vim
 
