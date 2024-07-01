@@ -26,8 +26,13 @@ return require('packer').startup(function(use)
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
 
-  -- Auto closing brackets etc.
-  -- use 'jiangmiao/auto-pairs'
+  use {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = function()
+        require("nvim-autopairs").setup {}
+    end
+  }
 
   use 'ambv/black'
 

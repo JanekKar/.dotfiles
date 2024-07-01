@@ -6,12 +6,14 @@ defaults ={
         ".git/*",
         ".bloop./*",
         ".metals./*",
-        ".bsp/*"
+        ".bsp/*",
+        ".g8/*"
     }
   },
-pickers = {
+  pickers = {
     find_files = {
-      hidden = true
+      hidden = true,
+      no_ignore = true
     }
   }
 }
