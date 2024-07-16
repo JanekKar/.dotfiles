@@ -16,7 +16,8 @@ return {
        'hrsh7th/cmp-nvim-lua',
        'hrsh7th/cmp-nvim-lsp',
        "hrsh7th/cmp-cmdline",
-       'onsails/lspkind.nvim'
+       'onsails/lspkind.nvim',
+       "rafamadriz/friendly-snippets"
     },
 
     config = function()
