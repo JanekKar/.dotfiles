@@ -1,36 +1,30 @@
-local nnoremap = require("janekkar.keymap").nnoremap
-local inoremap = require("janekkar.keymap").inoremap
-local vnoremap = require("janekkar.keymap").vnoremap
-local xnoremap = require("janekkar.keymap").xnoremap
-local nmap = require("janekkar.keymap").nmap
+vim.keymap.set("n", "<leader>ee", "<cmd>Vexplore<Cr>")
 
-nnoremap("<leader>ee", "<cmd>Vexplore<Cr>")
+vim.keymap.set("n", "<Up>", "<nop>")
+vim.keymap.set("n", "<Down>", "<nop>")
+vim.keymap.set("n", "<Left>", "<nop>")
+vim.keymap.set("n", "<Right>", "<nop>")
+vim.keymap.set("i", "<Up>", "<nop>")
+vim.keymap.set("i", "<Down>", "<nop>")
+vim.keymap.set("i", "<Left>", "<nop>")
+vim.keymap.set("i", "<Right>", "<nop>")
+vim.keymap.set("v", "<Up>", "<nop>")
+vim.keymap.set("v", "<Down>", "<nop>")
+vim.keymap.set("v", "<Left>", "<nop>")
+vim.keymap.set("v", "<Right>", "<nop>")
+vim.keymap.set("n", "<PageUp>", "<nop>")
+vim.keymap.set("i", "<PageUp>", "<nop>")
+vim.keymap.set("v", "<PageUp>", "<nop>")
+vim.keymap.set("n", "<PageDown>", "<nop>")
+vim.keymap.set("i", "<PageDown>", "<nop>")
 
-nnoremap("<Up>", "<nop>")
-nnoremap("<Down>", "<nop>")
-nnoremap("<Left>", "<nop>")
-nnoremap("<Right>", "<nop>")
-inoremap("<Up>", "<nop>")
-inoremap("<Down>", "<nop>")
-inoremap("<Left>", "<nop>")
-inoremap("<Right>", "<nop>")
-vnoremap("<Up>", "<nop>")
-vnoremap("<Down>", "<nop>")
-vnoremap("<Left>", "<nop>")
-vnoremap("<Right>", "<nop>")
-nnoremap("<PageUp>", "<nop>")
-inoremap("<PageUp>", "<nop>")
-vnoremap("<PageUp>", "<nop>")
-nnoremap("<PageDown>", "<nop>")
-inoremap("<PageDown>", "<nop>")
+vim.keymap.set("n", "<leader>u", ":UndotreeShow<CR>")
 
-nnoremap("<leader>u", ":UndotreeShow<CR>")
+vim.keymap.set("x", "<leader>p", "\"_dp")
 
-xnoremap("<leader>p", "\"_dp")
+vim.keymap.set("n", "<leader>y", "\"+y")
+vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set("n", "<leader>y", "\"+y", {noremap = false})
 
-nnoremap("<leader>y", "\"+y")
-vnoremap("<leader>y", "\"+y")
-nmap("<leader>y", "\"+y")
-
-nnoremap("<leader>d", "\"_d")
-vnoremap("<leader>d", "\"_d")
+vim.keymap.set("n", "<leader>d", "\"_d")
+vim.keymap.set("v", "<leader>d", "\"_d")

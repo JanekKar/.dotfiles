@@ -1,7 +1,6 @@
 require("janekkar.set")
 require("janekkar.remap")
 require("janekkar.lazy_init")
-require("janekkar.keymap")
 
 local augroup = vim.api.nvim_create_augroup
 janekkarGroup = augroup('JanekKar', {})
