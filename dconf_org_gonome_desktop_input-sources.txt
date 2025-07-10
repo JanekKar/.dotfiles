@@ -1,0 +1,5 @@
+[/]
+per-window=false
+show-all-sources=false
+sources=[('xkb', 'pl')]
+xkb-options=['caps:none']
