@@ -1,0 +1,109 @@
+{
+  "position": "top",
+  "modules-left": ["custom/power", "hyprland/workspaces", "custom/uptime", "tray"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "idle_inhibitor",
+    "power-profiles-daemon",
+    "bluetooth",
+    "network",
+    "pulseaudio",
+    "battery",
+    "clock",
+  ],
+
+ "hyprland/workspaces": {
+    "format": "{name}: {icon}",
+    "format-icons": {
+      "active": "",
+      "default": ""
+    }
+  },
+
+  "clock": {
+    "format": "<span>  </span>{:%a %d %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "<span size='13000' foreground='#a6e3a1'>{icon} </span> {capacity}%",
+    "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {capacity}%",
+    "format-critical": "<span size='13000' foreground='#E38C8F'>{icon} </span> {capacity}%",
+    "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {time}",
+    "format-full": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip-format": "{time}"
+  },
+  "pulseaudio": {
+      "format": "{icon}  {volume}%",
+      "format-muted": "",
+      "format-icons": {
+          "default": ["", "", " "]
+      },
+      "on-click": "pavucontrol"
+  },
+  "network": {
+    "format-wifi": "<span size='13000'> </span>",
+    "format-ethernet": "<span size='13000'> </span>",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "<span size='13000'>󰤭 </span>Disconnected",
+    "tooltip-format-wifi": "{essid} - Strenght: {signalStrength}%",
+    "on-click": "kcmshell6 kcm_networkmanagement"
+  },
+  "idle_inhibitor": {
+      "format": "<span>{icon} </span>",
+      "format-icons": {
+          "activated": "",
+          "deactivated": ""
+      }
+  },
+  "power-profiles-daemon": {
+    "format": "<span>{icon} </span>",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  "custom/power": {
+      "format" : "<span size='13000'>⏻</span> ",
+      "tooltip": "Power menu",
+      "menu": "on-click",
+      "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+      "menu-actions": {
+        "shutdown": "systemctl poweroff",
+        "reboot": "systemctl reboot",
+        "suspend": "systemctl suspend",
+        "hibernate": "systemctl hibernate"
+      }
+
+   },
+  "custom/uptime": {
+    "format": "{}",
+    "format-icon": [""],
+    "tooltip": false,
+    "interval": 1600,
+    "exec": "$HOME/.config/waybar/scripts/uptime.sh"
+  },
+  "bluetooth": {
+    "format": "󰂲",
+    "format-on": "{icon}",
+    "format-off": "{icon}",
+    "format-connected":"{icon}",
+    "format-icons":{
+        "on":"󰂯",
+        "off": "󰂲",
+        "connected": "󰂱",
+        },
+    "on-click": "blueman-manager",
+    "tooltip-format-connected":"{device_enumerate}"
+  },
+}
