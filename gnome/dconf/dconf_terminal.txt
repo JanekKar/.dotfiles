@@ -1,0 +1,36 @@
+[legacy]
+default-show-menubar=false
+new-terminal-mode='tab'
+schema-version=uint32 3
+theme-variant='dark'
+
+[legacy/keybindings]
+close-tab='<Primary><Shift>w'
+close-window='<Primary><Shift>q'
+new-tab='<Primary><Shift>t'
+new-window='<Primary><Shift>t'
+
+[legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+audible-bell=true
+background-color='rgb(44,44,44)'
+background-transparency-percent=6
+bold-color-same-as-fg=true
+bold-is-bright=false
+cursor-blink-mode='on'
+cursor-colors-set=false
+cursor-shape='ibeam'
+default-size-columns=100
+default-size-rows=35
+font='AnonymicePro Nerd Font 12'
+foreground-color='rgb(197,198,201)'
+highlight-colors-set=false
+login-shell=false
+palette=['rgb(5,40,50)', 'rgb(203,37,34)', 'rgb(44,153,0)', 'rgb(210,176,0)', 'rgb(38,139,210)', 'rgb(150,100,202)', 'rgb(47,191,185)', 'rgb(198,200,203)', 'rgb(55,92,122)', 'rgb(226,81,20)', 'rgb(81,168,87)', 'rgb(164,132,38)', 'rgb(131,148,150)', 'rgb(108,113,196)', 'rgb(138,173,173)', 'rgb(217,219,222)']
+preserve-working-directory='always'
+scroll-on-output=false
+scrollbar-policy='never'
+use-custom-command=false
+use-system-font=false
+use-theme-transparency=false
+use-transparent-background=false
+visible-name='My'

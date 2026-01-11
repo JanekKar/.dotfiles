@@ -1,5 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  lazy=false,
+  branch="master",
   build = ":TSUpdate",
   config = function()
     require("nvim-treesitter.configs").setup({
@@ -15,7 +17,8 @@ return {
         "lua",
         "regex",
         "bash",
-        "hocon"
+        "hocon",
+        "hyprlang"
       },
 
       -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -66,5 +69,11 @@ return {
       { 'BufNewFile', 'BufRead' },
       { group = hocon_group, pattern = '*.conf', command = 'set ft=hocon' }
     )
+
+    vim.filetype.add({
+      pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+    })
+
   end
+
 }

@@ -2,7 +2,7 @@ alias ll="exa --long --header"
 alias l="exa -a --long --header"
 alias llg="exa --long --header"
 
-alias nvim="~/bin/nvim-linux-x86_64/bin/nvim"
+# alias nvim="~/bin/nvim-linux-x86_64/bin/nvim"
 alias vim="nvim"
 
 alias vimconfig="cd $HOME/.config/nvim && nvim . && cd -"
@@ -13,3 +13,11 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 alias open="xdg-open"
+alias ls='eza -al --color=always --group-directories-first --icons' # preferred listing
+alias l='eza -al --color=always --group-directories-first --icons'  # all files and dirs
+alias ll='eza -l --color=always --group-directories-first --icons'  # long format
+alias lt='eza -aT --color=always --group-directories-first --icons' # tree listing
+alias l.="eza -a | grep -e '^\.'"                                     # show only dotfiles
+
+alias gp=git push
+alias gl=git pull
