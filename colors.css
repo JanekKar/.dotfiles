@@ -1,0 +1,40 @@
+@define-color text-color rgba(198, 208, 245, 1);
+@define-color background rgba(26, 27, 38, 1);
+@define-color background-highlight rgb(41, 42, 53);
+@define-color button-bg rgba(186, 187, 241, 1);
+@define-color button-active-bg rgba(153, 209, 219, 0.1);
+@define-color button-active-fg rgba(153, 209, 219, 1);
+@define-color box-shadow rgba(0, 0, 0, 0.1);
+
+
+
+@define-color cc-bg @background;
+@define-color noti-border-color rgba(255, 255, 255, 0.15);
+@define-color noti-bg @background;
+@define-color noti-bg-darker rgb(255, 38, 38);
+@define-color noti-bg-hover @background-highlight;
+@define-color noti-bg-focus @background-highlight;
+@define-color noti-close-bg rgba(255, 255, 255, 0.1);
+@define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
+@define-color text-color @text-color;
+@define-color text-color-disabled rgb(150, 150, 150);
+@define-color bg-selected @background-highlight;
+
+/* Fallback for older CSS themes */
+/* @define-color cc-bg rgba(46, 46, 46, 0.9); */
+/* @define-color noti-border-color rgba(255, 255, 255, 0.15); */
+/* @define-color noti-bg rgba(48, 48, 48, 0.8); */
+/* @define-color noti-bg-opaque rgb(48, 48, 48); */
+/* @define-color noti-bg-darker rgb(38, 38, 38); */
+/* @define-color noti-bg-hover rgb(56, 56, 56); */
+/* @define-color noti-bg-hover-opaque rgb(56, 56, 56); */
+/* @define-color noti-bg-focus rgba(68, 68, 68, 0.6); */
+/* @define-color noti-close-bg rgba(255, 255, 255, 0.1); */
+/* @define-color noti-close-bg-hover rgba(255, 255, 255, 0.15); */
+/* @define-color text-color rgb(255, 255, 255); */
+/* @define-color text-color-disabled rgb(150, 150, 150); */
+/* @define-color bg-selected rgb(0, 128, 255); */
+/* notificationwindow, blankwindow, blankwindow { */
+/*   background: transparent; */
+/* } */
+

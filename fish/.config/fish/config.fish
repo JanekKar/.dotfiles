@@ -5,7 +5,6 @@ zoxide init --cmd cd fish | source
 source ~/.alias
 
 
-
 # overwrite greeting
 # potentially disabling fastfetch
 #function fish_greeting

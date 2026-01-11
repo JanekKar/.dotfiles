@@ -1,7 +1,9 @@
 /* --- Waybar Container --- */
+@import "/home/janek/.dotfiles/colors.css";
+
 #waybar {
   background: transparent;
-  color: #c6d0f5;
+  color: @text-color;
   margin: 0px;
   font-weight: 500;
 }
@@ -9,12 +11,13 @@
 /* --- Left Modules (Individual, Fully Rounded Blocks - With Horizontal Spacing & Simple Hover) --- */
 #workspaces,
 #custom-uptime,
-#cpu {
-  background-color: #1a1b26;
+#cpu,
+#custom-power{
+  background-color: @background;
   padding: 0.3rem 0.7rem;
   margin: 5px 0px; /* 5px top/bottom margin, 0px left/right (base for individual control) */
   border-radius: 6px; /* These modules are always rounded */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px @box-shadow;
   min-width: 0;
   border: none;
   /* Transition for background-color and color only */
@@ -34,11 +37,11 @@
 /* Simple Hover effects for individual left modules - BRIGHTER COLOR */
 #custom-uptime:hover,
 #cpu:hover {
-  background-color: rgb(41, 42, 53); /* Brighter highlight */
+  background-color: @background-highlight;
 }
 
 #workspaces button {
-  color: #babbf1;
+  color: @button-bg;
   border-radius: 5px; /* Workspaces buttons are always rounded */
   padding: 0.3rem 0.6rem;
   background: transparent;
@@ -48,20 +51,20 @@
 }
 
 #workspaces button.active {
-  color: #99d1db;
-  background-color: rgba(153, 209, 219, 0.1);
+  color: @button-active-fg;
+  background-color: @button-active-bg;
   box-shadow: inset 0 0 0 1px rgba(153, 209, 219, 0.2);
 }
 
 #workspaces button:hover {
-  background: rgb(41, 42, 53); /* Reference bright hover color */
-  color: #c6d0f5;
+  background: @background-highlight; /* Reference bright hover color */
+  color: @text-color;
 }
 
 /* --- Center Module (Individual, Fully Rounded Block - With Simple Hover) --- */
 #window,
 #custom-power{
-  background-color: #1a1b26;
+  background-color: @background;
   padding: 0.3rem 0.7rem;
   margin: 5px 0px;
   border-radius: 6px; /* This module is always rounded */
@@ -82,7 +85,7 @@
 #power-profiles-daemon,
 #custom-notification,
 #clock{
-  background-color: #1a1b26;
+  background-color: @background;
   padding: 0.3rem 0.7rem;
   margin: 5px 0px;
   border-radius: 0;
@@ -100,8 +103,8 @@
 #battery:hover,
 #idle_inhibitor:hover,
 #power-profiles-daemon:hover,
-#clock{
-  background-color: rgb(41, 42, 53);
+#clock:hover{
+  background-color: @background-highlight;
 }
 
 #idle_inhibitor,
@@ -116,6 +119,12 @@
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   margin-right: 7px;
+}
+
+/* custom icon colors */
+#custom-power{
+  color: #E38C8F;
+  margin-left: 5px;
 }
 
 #custom-uptime {
@@ -193,12 +202,12 @@
 
 /* --- Tooltip Styles --- */
 tooltip {
-  background-color: #1a1b26;
+  background-color: @background;
   color: #dddddd;
   padding: 5px 12px;
   margin: 5px 0px;
   border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px @box-shadow;
   font-size: 12px;
 }

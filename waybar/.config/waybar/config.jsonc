@@ -1,4 +1,5 @@
 {
+  "reload_style_on_change": true,
   "position": "top",
   "modules-left": ["custom/power", "hyprland/workspaces", "custom/uptime", "tray"],
   "modules-center": ["hyprland/window"],
@@ -69,7 +70,7 @@
     }
   },
   "custom/power": {
-      "format" : "<span size='13000'>⏻</span> ",
+      "format" : "<span size='13000'> ⏻</span> ",
       "tooltip": "Power menu",
       "menu": "on-click",
       "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
