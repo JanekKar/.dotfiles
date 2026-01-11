@@ -7,8 +7,10 @@
     "power-profiles-daemon",
     "bluetooth",
     "network",
-    "pulseaudio",
+    "pulseaudio#input",
+    "pulseaudio#output",
     "battery",
+    "custom/notification",
     "clock",
   ],
 
@@ -22,7 +24,8 @@
 
   "clock": {
     "format": "<span>  </span>{:%a %d %H:%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "on-click": "swaync-client -t -sw",
   },
   "battery": {
     "states": {
@@ -39,19 +42,11 @@
     "format-icons": ["", "", "", "", ""],
     "tooltip-format": "{time}"
   },
-  "pulseaudio": {
-      "format": "{icon}  {volume}%",
-      "format-muted": "",
-      "format-icons": {
-          "default": ["", "", " "]
-      },
-      "on-click": "pavucontrol"
-  },
   "network": {
     "format-wifi": "<span size='13000'> </span>",
     "format-ethernet": "<span size='13000'> </span>",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "<span size='13000'>󰤭 </span>Disconnected",
+    "format-disconnected": "<span size='13000'>󰤭 </span> Disconnected",
     "tooltip-format-wifi": "{essid} - Strenght: {signalStrength}%",
     "on-click": "kcmshell6 kcm_networkmanagement"
   },
@@ -79,7 +74,7 @@
       "menu": "on-click",
       "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
       "menu-actions": {
-        "shutdown": "systemctl poweroff",
+        "shutdown": "killall brave; systemctl poweroff",
         "reboot": "systemctl reboot",
         "suspend": "systemctl suspend",
         "hibernate": "systemctl hibernate"
@@ -87,8 +82,7 @@
 
    },
   "custom/uptime": {
-    "format": "{}",
-    "format-icon": [""],
+    "format": "<span>{}</span>",
     "tooltip": false,
     "interval": 1600,
     "exec": "$HOME/.config/waybar/scripts/uptime.sh"
@@ -105,5 +99,54 @@
         },
     "on-click": "blueman-manager",
     "tooltip-format-connected":"{device_enumerate}"
+  },
+    "custom/notification": {
+    "tooltip": true,
+    "format": "<span size='13000'>{icon}</span>",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -d -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+   "pulseaudio#input": {
+    "format-source": " {volume}%",
+    "format-source-muted": " off",
+    "format": "{format_source}",
+    "scroll-step": 1,
+    "smooth-scrolling-threshold": 1,
+    "max-volume": 100,
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-click-middle": "pavucontrol",
+    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
+    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%",
+  },
+  "pulseaudio#output": {
+      "format": "{icon} {volume}%",
+      "format-muted": " off",
+      "format-icons": {
+          "headphone": "",
+          "hands-free": "",
+          "headset": "",
+          "phone": "",
+          "portable": "",
+          "car": "",
+          "default": ["", "", ""]
+      },
+      "max-volume": 100,
+      "scroll-step": 2,
+      "smooth-scrolling-threshold": 1,
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
   },
 }

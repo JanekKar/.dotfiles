@@ -59,7 +59,6 @@
 }
 
 /* --- Center Module (Individual, Fully Rounded Block - With Simple Hover) --- */
-#clock,
 #window,
 #custom-power{
   background-color: #1a1b26;
@@ -72,49 +71,6 @@
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-/* Simple Hover effect for clock module - BRIGHTER COLOR */
-#clock:hover{
-  background-color: rgba(153, 209, 219, 0.1); /* Brighter highlight */
-}
-
-#custom-pomodoro {
-    background-color: #1a1b26; /* Consistent dark background */
-    padding: 0.3rem 0.7rem; /* Consistent padding with other modules (e.g., cpu, uptime) */
-    margin: 5px 0px; /* 5px top/bottom margin, 0px left/right (base for individual control) */
-    border-radius: 6px; /* Consistent rounded corners with other individual modules */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Consistent shadow */
-    min-width: 0;
-    border: none;
-    outline: none; /* Ensure no default outline */
-    /* Transition for background-color, color, outline, and box-shadow for smooth effect */
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, outline 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    color: #babbf1; /* A calm color, consistent with custom-uptime */
-    font-weight: 600; /* Slightly bolder for the timer, consistent with clock */
-}
-
-/* Positioning and spacing for the custom-pomodoro module */
-#custom-pomodoro {
-    margin-left: 5px; /* Spacing from the previous module (e.g., clock) */
-    margin-right: 5px; /* Spacing before the seamless right bar starts (e.g., bluetooth) */
-}
-
-/* Hover effect for the new pomodoro module (consistent with others + rectangular outline) */
-#custom-pomodoro:hover {
-    background-color: rgb(41, 42, 53); /* Brighter highlight, consistent with other individual modules */
-    color: #c6d0f5; /* Text color change on hover, consistent with other individual modules */
-    outline: 1px solid rgba(255, 255, 255, 0.1); /* Rectangular outline on hover */
-    outline-offset: -1px;
-}
-
-/* --- Highlighted state for Pomodoro module when running (work or break) --- */
-#custom-pomodoro.work,
-#custom-pomodoro.break {
-  color: #99d1db; /* Text color consistent with active workspaces button */
-  background-color: rgba(153, 209, 219, 0.1); /* Background color consistent with active workspaces button */
-  box-shadow: inset 0 0 0 1px rgba(153, 209, 219, 0.2); /* Inner shadow for outline effect */
-  outline: none;
-}
-
 /* --- Right Modules (Single, Seamless Bar ) --- */
 #bluetooth,
 #pulseaudio,
@@ -123,7 +79,9 @@
 #custom-lock,
 #battery,
 #idle_inhibitor,
-#power-profiles-daemon{
+#power-profiles-daemon,
+#custom-notification,
+#clock{
   background-color: #1a1b26;
   padding: 0.3rem 0.7rem;
   margin: 5px 0px;
@@ -141,17 +99,20 @@
 #custom-lock:hover,
 #battery:hover,
 #idle_inhibitor:hover,
-#power-profiles-daemon:hover{
+#power-profiles-daemon:hover,
+#clock{
   background-color: rgb(41, 42, 53);
 }
 
-#idle_inhibitor {
+#idle_inhibitor,
+#custom-notification {
   margin-left: 0px;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
 }
 
-#battery {
+#battery,
+#clock{
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   margin-right: 7px;
@@ -160,6 +121,7 @@
 #custom-uptime {
   color: #babbf1;
 }
+
 #cpu {
   color: #c6d0f5;
 }
@@ -172,16 +134,38 @@
 #pulseaudio {
   color: #c6d0f5;
 }
-#idle_inhibitor {
-  color: #c6d0f5;
+
+#pulseaudio.muted {
+  color: #E38C8F;
 }
 
-#network {
-  color: #c6d0f5;
+#pulseaudio.source-muted {
+  color: #E38C8F;
+}
+
+#idle_inhibitor.activated {
+  color: #b1e3ad;
+}
+
+#idle_inhibitor.deactivated {
+  color: #E38C8F;
+}
+
+#power-profiles-daemon.power-saver {
+  color: #b1e3ad;
+}
+
+#power-profiles-daemon.performance{
+  color: #E38C8F;
+}
+
+#network.wifi,
+#network.ethernet{
+  color: #b1e3ad;
 }
 
 #network.disconnected {
-  color: #e78284;
+  color: #E38C8F;
 }
 
 #custom-lock {
@@ -198,7 +182,7 @@
   color: #99d1db;
 }
 #battery {
-  color: #99d1db;;
+  color: #99d1db;
 }
 #battery.charging {
   color: #a6d189;
