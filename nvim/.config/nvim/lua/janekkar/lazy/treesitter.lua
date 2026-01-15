@@ -64,11 +64,11 @@ return {
 
     -- vim.treesitter.language.register("templ", "templ")
 
-    local hocon_group = vim.api.nvim_create_augroup("hocon", { clear = true })
-    vim.api.nvim_create_autocmd(
-      { 'BufNewFile', 'BufRead' },
-      { group = hocon_group, pattern = '*.conf', command = 'set ft=hocon' }
-    )
+    -- local hocon_group = vim.api.nvim_create_augroup("hocon", { clear = true })
+    -- vim.api.nvim_create_autocmd(
+    --   { 'BufNewFile', 'BufRead' },
+    --   { group = hocon_group, pattern = '*.conf', command = 'set ft=hocon' }
+    -- )
 
     vim.filetype.add({
       pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
